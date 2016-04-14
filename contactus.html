@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+ img {
+    width:100%;
+    height:800px;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100); 
+}
+
+</style>
+
+</head>
+<body>
+	<div class="image">
+<img src="images/contactus.jpg" />
+	<div align="center" style="margin:50px">
+<form method="post" action="" id="contactus">
+		<p class="sevenday">OTMT offers Support 7 Days a Week</p>
+
+		<div class="clearheight"></div>
+
+		<label for="contact_name">Your name *</label><br>
+		<input type="text" name="name" id="contact_name" value="">
+		
+
+
+		<div class="clearheight10"></div>
+			 <label for="contact_uname">OTMT username (If registered)</label><br>
+			 <input class="textinput" type="text" name="cust_username" id="contact_uname" value="">		<div class="clearheight"></div>
+
+
+
+		<label for="contact_email">Your email address *</label><br>
+		<input class="textinput" type="text" name="email" id="contact_email" value="">
+				<div class="clearheight10"></div>
+
+
+
+		<label for="contact_type">Contact Number</label><br>
+		<input class="textinput" type="text" name="email" id="contact_number" value="">
+		
+		<div class="clearheight10"></div>
+
+
+		<label for="contact_subject">Subject *</label><br>
+				<input class="textinput" type="text" name="subject" id="contact_subject" value="">
+		
+
+		<div class="clearheight10"></div>
+		<label for="contact_body">Question / Message *</label><br>
+		<textarea cols="40" rows="4" name="body" id="contact_body" class="showTooltip" title="Please be as descriptive as possible. This will better help us help you!"></textarea>
+				<div class="clearheight10"></div>
+
+		<p class="nopad"><strong>Please check</strong> your email address above is correct to ensure we can reply to you.</p>
+
+
+		<input type="submit" value="Email OTMT">
+
+	</form>
+</div>
+	</body>
+	</html>
