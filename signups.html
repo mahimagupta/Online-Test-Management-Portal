@@ -9,7 +9,7 @@ img {
 
 img:hover {
     opacity: 1.0;
-    filter: alpha(opacity=100); 
+    filter: alpha(opacity=100);
 }
 .login-box{
   position:relative;
@@ -19,7 +19,7 @@ img:hover {
   background-color: #fff;
   padding: 10px;
   border-radius: 3px;
-  position: relative; 
+  position: relative;
   top: -1400px;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
@@ -33,7 +33,7 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
   border-bottom: 1px solid #eee;
   text-align:center;
   height:28px;
-  position: relative; 
+  position: relative;
   top: -1400px;
 }
 .lb-header a{
@@ -146,25 +146,25 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 <img src="images/student.jpg" />
   <h1 style="position: relative;top: -1400px;" align="center">SIGN UP FOR STUDENTS</h1>
 <div class="u-form-group"  >
-        <input type="text" placeholder="Full Name" required pattern="\w+"/>
+        <input type="text" placeholder="Full Name" name="username" required pattern="\w+"/>
       </div>
       <div class="u-form-group"  >
-        <input type="text" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
+        <input type="text" placeholder="Email" name="emailId" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Password" name-"pwd1" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"/>
+        <input type="password" placeholder="Password" name="pwd1" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"/>
       </div>
       <div class="u-form-group">
         <input type="password" placeholder="Confirm Password" name="pwd2" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"/>
       </div>
       <div class="u-form-group"  >
-        <input type="text" placeholder="Registration Number" required />
+        <input type="text" name="regNo" placeholder="Registration Number" required />
       </div>
       <div class="u-form-group"  >
-        <input type="text" placeholder="Phone Number" required />
+        <input type="text" name="mobNo" placeholder="Phone Number" required />
       </div>
       <div class="u-form-group">
-        <button>Sign Up</button>
+        <button type="submit">Sign Up</button>
       </div>
 
   </div>
