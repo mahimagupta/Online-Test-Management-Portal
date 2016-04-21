@@ -15,7 +15,7 @@ include("header.php");
 include("database.php");
 // extract($_POST);
 
-echo "<h1 class='style8' align=center>Wel come to Online Exam</h1>";
+echo "<h1 class='style8' align=center>Welcome to OTMT</h1>";
 		echo '<table width="28%"  border="0" align="center">
   <tr>
     <td width="7%" height="65" valign="bottom"><img src="image/HLPBUTT2.JPG" width="50" height="50" align="middle"></td>
@@ -26,9 +26,5 @@ echo "<h1 class='style8' align=center>Wel come to Online Exam</h1>";
     <td valign="bottom"> <a href="result.php" class="style4">Result </a></td>
   </tr>
 </table>';
-
-
-
-
 
 ?>

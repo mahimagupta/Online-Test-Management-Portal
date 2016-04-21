@@ -17,7 +17,7 @@
 
 img:hover {
     opacity: 1.0;
-    filter: alpha(opacity=100); 
+    filter: alpha(opacity=100);
 }
 .btn{
       border-radius: 8px;
@@ -42,35 +42,35 @@ img:hover {
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin</a><ul class="dropdown-menu">
       <li><a href="#">Submenu 1-1</a></li>
       <li><a href="#">Submenu 1-2</a></li>
-      <li><a href="#">Submenu 1-3</a></li> 
+      <li><a href="#">Submenu 1-3</a></li>
     </ul>
     </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Teachers</a><ul class="dropdown-menu">
       <li><a href="#">Submenu 1-1</a></li>
       <li><a href="createtest.html">Create Test</a></li>
-      <li><a href="#">Submenu 1-3</a></li> 
+      <li><a href="#">Submenu 1-3</a></li>
     </ul>
   </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Students</a><ul class="dropdown-menu">
       <li><a href="#">Submenu 1-1</a></li>
       <li><a href="#">Take a Test</a></li>
-      <li><a href="#">View Results</a></li> 
+      <li><a href="#">View Results</a></li>
     </ul>
-    </li> 
+    </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Training</a><ul class="dropdown-menu">
       <li><a href="progress.html">Progress</a></li>
       <li><a href="#">Submenu 1-2</a></li>
-      <li><a href="#">Submenu 1-3</a></li> 
+      <li><a href="#">Submenu 1-3</a></li>
     </ul>
     <li><a href="contactus.html">Contact Us</a><li>
-  </li> 
+  </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a><ul class="dropdown-menu">
       <li><a href="logins.html">Students</a></li>
       <li><a href="logint.html">Teachers</a></li>
-      <li><a href="logina.html">Admins</a></li> 
+      <li><a href="logina.html">Admins</a></li>
     </ul>
 
     </ul>
@@ -79,7 +79,7 @@ img:hover {
   <div class="image">
 <img src="images/dd.jpg" />
 
-    <div class="col-sm-7 text-left" style="float:center;padding-left:160px;position:relative;top: -600px;"> 
+    <div class="col-sm-7 text-left" style="float:center;padding-left:160px;position:relative;top: -600px;">
       <h1 style="font-size:40px;">Welcome to OTMT</h1>
       <br>
       <p style="font-size:20px;">The safest and easiest way for educators to connect and</p>
