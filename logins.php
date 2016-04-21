@@ -11,8 +11,10 @@ extract($_POST);
       {
         $arr = mysqli_fetch_assoc($q);
         if($password == $arr['password']){
-        $_SESSION['email'] = $email;
-        $_SESSION['usertype'] = "student";}
+          $_SESSION['login'] = $email;
+          $_SESSION['usertype'] = "student";
+          header("Location: studentlogin.php");
+      }
         else {
           echo "Incorrect Password!";
         }

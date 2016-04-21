@@ -9,8 +9,11 @@ extract($_POST);
 
     if( $count == 1 )
       {
-        $_SESSION['email'] = $email;
+        $arr = mysqli_fetch_assoc($q);
+      if($password == $arr['password']){
+        $_SESSION['login'] = $email;
         $_SESSION['usertype'] = "teacher";
+    }
       }
     else
       echo "Teacher Not Found";

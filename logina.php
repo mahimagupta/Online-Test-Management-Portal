@@ -8,9 +8,11 @@ extract($_POST);
     $count = mysqli_num_rows($q);
 
     if( $count == 1 )
-      {
-        $_SESSION['email'] = $email;
+      {$arr = mysqli_fetch_assoc($q);
+      if($password == $arr['password']){
+        $_SESSION['login'] = $email;
         $_SESSION['usertype'] = "admin";
+    }
       }
     else
       echo "Admin Not Found";
