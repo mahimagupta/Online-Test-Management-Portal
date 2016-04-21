@@ -8,9 +8,13 @@ extract($_SESSION);
 if (!isset($_SESSION['timeout'])) {
 	$query = "Select * from mst_test where test_id = '$testid'";
 	$ans = mysqli_query($cn,$query);
-	$row = mysqli_fetch_assoc($ans;)
-  $_SESSION['timeout'] = strtotime($row['duration']);
+	$row = mysqli_fetch_assoc($ans);
+	$query = "+".$row['duration']." minutes";
+	$_SESSION['timeout'] = strtotime($query);
 }
+// if (isset($_SESSION['timeout']) && (time() > $_SESSION['timeout'])) {
+//   header('Location: review.php');
+// }
 /*$rs=mysqli_query($cn,"select * from mst_question where test_id=$tid") or die(mysqli_error());
 if($_SESSION[qn]>mysqli_num_rows($rs))
 {
@@ -101,8 +105,8 @@ exit;
 }
 mysqli_data_seek($rs,$_SESSION[qn]);
 $row= mysqli_fetch_row($rs);
-echo "<form name=myfm method=post action=quiz.php>";
-echo "<table width=100%> <tr> <td width=30>&nbsp;<td> <table border=0>";
+echo "<form style="."align:center;"."name=myfm method=post action=quiz.php>";
+echo "<table width=20% > <tr> <td width=30>&nbsp;<td> <table border=0>";
 $n=$_SESSION[qn]+1;
 echo "<tR><td><span class=style2>Que ".  $n .": $row[2]</style>";
 echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q1a value=1>$row[3]";
@@ -110,12 +114,65 @@ echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q2a value=2>$ro
 echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q3a value=3>$row[5]";
 echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q4a value=4>$row[6]";
 
-
 if($_SESSION[qn]<mysqli_num_rows($rs)-1)
 echo "<tr><td><input type=submit name=submit value='Next Question'></form>";
 else
 echo "<tr><td><input type=submit name=submit value='Get Result'></form>";
 echo "</table></table>";
 ?>
+<?php $timeLeft = $_SESSION['timeout'] - time();?>
+<p style="font-size: 200%; margin-right:90px;text-align: right"> Timer: </p>
+<div id="timeDisplay" style="font-size: 200%; margin: 0px 100px 900px 900px; text-align: right">&ndash;</div>
+
+<script type="text/javascript">
+
+
+// Get the remaining time from the php code
+var timeLeft = <?php echo $timeLeft?>;
+var timeStart = new Date();
+
+// Refresh the time display and check whether the time is up
+function updateCountdown() {
+  // calculate the remaining time
+  var now = new Date();
+  var timePage = Math.floor((now.getTime() - timeStart.getTime()) / 1000);  // Time passed in seconds
+  var remain = timeLeft - timePage;
+
+  // Is the time up?
+  if (remain <= 0) {
+    remain = 0;
+    // Stop the timer
+    window.clearInterval(timerInterval);
+    // Display a message (optional)
+    alert("The time is up.");
+    // Redirect the participant to the next page (optional)
+   // SoSciTools.submitPage();
+  }
+
+  // Display the time
+  var display = document.getElementById("timeDisplay");
+  if (!display) {
+    return;
+  }
+  while (display.lastChild) {
+    display.removeChild(display.lastChild);
+  }
+  var minutes = Math.floor(remain / 60);
+  var seconds = String(remain - 60 * minutes);
+  if (seconds.length < 2) {
+    seconds = "0" + seconds;
+  }
+  var displayText = String(minutes) + ":" + seconds;
+  var displayNode = document.createTextNode(displayText);
+  display.appendChild(displayNode);
+}
+
+// Initialize
+var timerInterval = window.setInterval(updateCountdown, 250);
+updateCountdown();
+
+
+</script>
 </body>
+
 </html>

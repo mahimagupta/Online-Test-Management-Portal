@@ -3,6 +3,7 @@ session_start();
 extract($_POST);
 extract($_SESSION);
 include("database.php");
+unset($_SESSION['timeout']);
 if($submit=='Finish')
 {
 	mysqli_query($cn,"delete from mst_useranswer where sess_id='" . session_id() ."'") or die(mysqli_error());
