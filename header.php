@@ -1,13 +1,4 @@
-<?php
-if(isset($_SESSION['login']))
-{
-	echo "<div align=\"right\"><strong><a href=\"login.php\">Admin Home</a>|<a href=\"signout.php\">Signout</a></strong></div>";
-}
-else
-{
-	echo "&nbsp;";
-}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,8 +19,6 @@ else
        -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
-
-
   </style>
 </head>
 <body>
@@ -39,12 +28,10 @@ else
       <a class="navbar-brand" href="#">OTMT</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Admin</a>
-     
-    </li>
-      <li ><a href="#">Teachers</a>
-  </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Students</a><ul class="dropdown-menu">
+      <li><a href="admin/login.php">Admin</a></li>
+      <li ><a href="#">Teachers</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Students</a>
+			<ul class="dropdown-menu">
       <li><a href="#">Submenu 1-1</a></li>
       <li><a href="#">Take a Test</a></li>
       <li><a href="#">View Results</a></li>
@@ -54,11 +41,22 @@ else
   </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a><ul class="dropdown-menu">
-      <li><a href="logins.html">Students</a></li>
-      <li><a href="logint.html">Teachers</a></li>
-      <li><a href="logina.html">Admins</a></li>
+      <li><?php
+			if(isset($_SESSION['login']))
+			{
+				echo "<a href=\"signout.php\"><span class=\"glyphicon glyphicon-user\"></span> Signout</a>";
+			}
+			else
+			{
+				echo "<a href="."signup.html"."><span class="."glyphicon glyphicon-user"."></span> Sign Up</a>";
+			}
+			?></li><?php
+			if(!isset($_SESSION['login'])){
+				echo '<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a><ul class="dropdown-menu">
+	      <li><a href="logins.html">Students</a></li>
+	      <li><a href="logint.html">Teachers</a></li>
+	      <li><a href="logina.html">Admins</a></li>';
+			}?>
     </ul>
 
     </ul>

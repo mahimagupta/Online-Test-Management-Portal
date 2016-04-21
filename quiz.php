@@ -5,6 +5,12 @@ include("database.php");
 extract($_POST);
 extract($_GET);
 extract($_SESSION);
+if (!isset($_SESSION['timeout'])) {
+	$query = "Select * from mst_test where test_id = '$testid'";
+	$ans = mysqli_query($cn,$query);
+	$row = mysqli_fetch_assoc($ans;)
+  $_SESSION['timeout'] = strtotime($row['duration']);
+}
 /*$rs=mysqli_query($cn,"select * from mst_question where test_id=$tid") or die(mysqli_error());
 if($_SESSION[qn]>mysqli_num_rows($rs))
 {
@@ -15,7 +21,7 @@ if(isset($subid) && isset($testid))
 {
 $_SESSION[sid]=$subid;
 $_SESSION[tid]=$testid;
-header("location:quiz.php");
+header("location: quiz.php");
 }
 if(!isset($_SESSION[sid]) || !isset($_SESSION[tid]))
 {
@@ -99,10 +105,11 @@ echo "<form name=myfm method=post action=quiz.php>";
 echo "<table width=100%> <tr> <td width=30>&nbsp;<td> <table border=0>";
 $n=$_SESSION[qn]+1;
 echo "<tR><td><span class=style2>Que ".  $n .": $row[2]</style>";
-echo "<tr><td class=style8><input type=radio name=ans value=1>$row[3]";
-echo "<tr><td class=style8> <input type=radio name=ans value=2>$row[4]";
-echo "<tr><td class=style8><input type=radio name=ans value=3>$row[5]";
-echo "<tr><td class=style8><input type=radio name=ans value=4>$row[6]";
+echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q1a value=1>$row[3]";
+echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q2a value=2>$row[4]";
+echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q3a value=3>$row[5]";
+echo "<tr><td class=style8><input type=\"radio\" name=\"ans\" id=q4a value=4>$row[6]";
+
 
 if($_SESSION[qn]<mysqli_num_rows($rs)-1)
 echo "<tr><td><input type=submit name=submit value='Next Question'></form>";
