@@ -39,17 +39,10 @@ else
       <a class="navbar-brand" href="#">OTMT</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin</a><ul class="dropdown-menu">
-      <li><a href="#">Submenu 1-1</a></li>
-      <li><a href="#">Submenu 1-2</a></li>
-      <li><a href="#">Submenu 1-3</a></li>
-    </ul>
+      <li><a href="#">Admin</a>
+     
     </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Teachers</a><ul class="dropdown-menu">
-      <li><a href="#">Submenu 1-1</a></li>
-      <li><a href="createtest.html">Create Test</a></li>
-      <li><a href="#">Submenu 1-3</a></li>
-    </ul>
+      <li ><a href="#">Teachers</a>
   </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Students</a><ul class="dropdown-menu">
       <li><a href="#">Submenu 1-1</a></li>
@@ -57,11 +50,6 @@ else
       <li><a href="#">View Results</a></li>
     </ul>
     </li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Training</a><ul class="dropdown-menu">
-      <li><a href="progress.html">Progress</a></li>
-      <li><a href="#">Submenu 1-2</a></li>
-      <li><a href="#">Submenu 1-3</a></li>
-    </ul>
     <li><a href="contactus.html">Contact Us</a><li>
   </li>
     </ul>
