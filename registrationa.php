@@ -6,8 +6,8 @@
     $id = $_POST['id'];
 
     $check = "SELECT * From admin where email = '$email'";
-    $count = mysqli_num_rows($check);
-
+    $q = mysqli_query($link,$check);
+    $count = mysqli_num_rows($q);
     if( $count == 0 )
       {
         $ins = mysqli_query($link, "INSERT INTO admin(id,username,email,password) VALUES ('$id','$username','$email','$password')");
@@ -15,4 +15,4 @@
         echo "successful";
       }
     else
-      $error = "User Already Exists";
+      echo "User Already Exists";

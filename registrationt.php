@@ -8,7 +8,8 @@
       $mobNo = $_POST['mobNo'];
 
     $check = "SELECT * From teacher where email = '$email'";
-    $count = mysqli_num_rows($check);
+    $q = mysqli_query($link,$check);
+    $count = mysqli_num_rows($q);
 
     if( $count == 0 )
       {
@@ -17,4 +18,4 @@
         echo "successful";
       }
     else
-      $error = "User Already Exists";
+      echo "User Already Exists";
