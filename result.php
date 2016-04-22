@@ -16,7 +16,8 @@ include("database.php");
 extract($_SESSION);
 $rs=mysqli_query($cn,"select t.test_name,t.total_que,r.test_date,r.score from mst_test t, mst_result r where
 t.test_id=r.test_id and r.login='$login'") or die(mysqli_error());
-
+$totalQuestions = 0;
+$totalScore = 0;
 echo "<h1 class=head1> Result </h1>";
 if(mysqli_num_rows($rs)<1)
 {
@@ -27,8 +28,15 @@ echo "<table border=1 align=center><tr class=style2><td width=300>Test Name <td>
 while($row=mysqli_fetch_row($rs))
 {
 echo "<tr class=style8><td>$row[0] <td align=center> $row[1] <td align=center> $row[3]";
+$totalQuestions = $totalQuestions + $row[1];
+$totalScore = $totalScore + $row[3];
 }
 echo "</table>";
+// echo "<p>total questions is $totalQuestions and score is $totalScore";
+$_SESSION['totalQuestions'] = $totalQuestions;
+$_SESSION['totalScore'] = $totalScore;
+echo "<br><br><center><a href=\"graphicalResult.php\"><p style=\"align:center\">Click Here for Graphical Result</p></a></center>";
 ?>
+
 </body>
 </html>

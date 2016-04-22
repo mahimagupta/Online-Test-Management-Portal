@@ -36,7 +36,7 @@ img:hover {
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">OTMT</a>
+      <a class="navbar-brand" href="index.php">OTMT</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="admin/login.php">Admin</a>
@@ -45,8 +45,8 @@ img:hover {
 
   </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Students</a><ul class="dropdown-menu">
-      <li><a href="#">Take a Test</a></li>
-      <li><a href="#">View Results</a></li>
+      <li><a href="showtest.php">Take a Test</a></li>
+      <li><a href="result.php">View Results</a></li>
     </ul>
     </li>
     <li><a href="contactus.html">Contact Us</a><li>
@@ -74,11 +74,11 @@ img:hover {
       <hr>
       <br><br><br>
       <br>
-      <h4><a href="#">Create your free account now</a></h4>
+      <h4>Create your free account now</h4>
       <div>
- <button type="button" class="btn btn-primary btn-md" >I'm a Student</button>
- <button type="button" class="btn btn-primary btn-md">I'm a Teacher</button>
- <button type="button" class="btn btn-primary btn-md">I'm an Admin</button>
+ <button type="button" class="btn btn-primary btn-md"><a href="signups.html">I'm a Student</a></button>
+ <button type="button" class="btn btn-primary btn-md"><a href="signupt.html">I'm a Teacher</a></button>
+ <button type="button" class="btn btn-primary btn-md"><a href="signupa.html">I'm an Admin</a></button>
 </div>
 </div>
 </body>

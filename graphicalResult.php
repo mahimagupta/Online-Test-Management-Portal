@@ -1,3 +1,5 @@
+<?php session_start();
+include 'header.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,22 +24,22 @@ window.onload = function () {
     },
     theme: "theme1",
     data: [
-    {        
+    {
       type: "pie",
-      indexLabelFontFamily: "Garamond",       
+      indexLabelFontFamily: "Garamond",
       indexLabelFontSize: 20,
       indexLabelFontWeight: "bold",
       startAngle:0,
-      indexLabelFontColor: "MistyRo",       
-      indexLabelLineColor: "darkgrey", 
-      indexLabelPlacement: "inside", 
-      toolTipContent: "{name}: {y}hrs",
+      indexLabelFontColor: "MistyRo",
+      indexLabelLineColor: "darkgrey",
+      indexLabelPlacement: "inside",
+      toolTipContent: "{name}: {y}score",
       showInLegend: true,
-      indexLabel: "#percent%", 
+      indexLabel: "#percent%",
       dataPoints: [
-        {  y: 55, name: "", legendMarkerType: "triangle"},
-        {  y: 45, name: "", legendMarkerType: "square"},
-        
+        {  y: <?php echo $_SESSION['totalQuestions']-$_SESSION['totalScore'] ?>, name: "Incorrect Answers", legendMarkerType: "triangle"},
+        {  y: <?php echo $_SESSION['totalScore'] ?>, name: "Correct Answers", legendMarkerType: "square"},
+
       ]
     }
     ]
@@ -50,18 +52,18 @@ window.onload = function () {
 <body>
 
 <div class="container">
-  <h2>Your progress till now...</h2>
-  <p></p> 
+  <h2>PERFORMANCE ANALYSIS</h2>
+  <p></p>
   <br>
   <br>
   <div class="progress">
-    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-      40% 
+    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo ($_SESSION['totalQuestions']-$_SESSION['totalScore'])/($_SESSION['totalQuestions'])*100 ?>%">
+      <?php echo round(($_SESSION['totalQuestions']-$_SESSION['totalScore'])/($_SESSION['totalQuestions']),2)*100 ?>%
     </div>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      70% 
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo ($_SESSION['totalScore'])/($_SESSION['totalQuestions'])*100 ?>%">
+      <?php echo round(($_SESSION['totalScore'])/($_SESSION['totalQuestions']),2)*100 ?>%
     </div>
   </div>
 </div>

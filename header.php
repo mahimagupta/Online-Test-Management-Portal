@@ -29,12 +29,12 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="admin/login.php">Admin</a></li>
-      <li ><a href="#">Teachers</a></li>
+      <li ><a href="admin/login.php">Teachers</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Students</a>
 			<ul class="dropdown-menu">
-      <li><a href="#">Submenu 1-1</a></li>
-      <li><a href="#">Take a Test</a></li>
-      <li><a href="#">View Results</a></li>
+      <li><a href="studentlogin.php">Home</a></li>
+      <li><a href="sublist.php">Take a Test</a></li>
+      <li><a href="result.php">View Results</a></li>
     </ul>
     </li>
     <li><a href="contactus.html">Contact Us</a><li>
